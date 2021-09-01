@@ -1,27 +1,32 @@
+import 'core-js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import { Provider } from 'react-redux';
+import Books from './redux/books/books';
 import Categories from './redux/categories/categories';
-import store from './redux/configureStore';
+import store from './redux/configureStores';
 import AddBook from './components/Add';
-import Books from './components/Display';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <Router>
         <Switch>
-          <Route exact path="/">
-            <Books />
-            <AddBook />
-          </Route>
           <Route path="/categories">
             <Categories />
           </Route>
+          <Route path="/">
+            <Books />
+            <AddBook />
+          </Route>
         </Switch>
-      </BrowserRouter>
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
