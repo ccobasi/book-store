@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import Books from './redux/books/books';
 import Categories from './redux/categories/categories';
 import './index.css';
-import store from './redux/configureStores';
+import store from './redux/configureStore';
 import AddBook from './components/Add';
 
 class App extends React.Component {
