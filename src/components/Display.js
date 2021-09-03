@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { removeBook } from '../redux/books/books';
+import { removeBookSuccess, fetchBooks } from '../redux/books/books';
 
 const Books = () => {
-  const myBooks = useSelector((state) => state.bookRedux);
-
   const dispatch = useDispatch();
+  const booksStatus = useSelector((state) => state.books.loading);
+
+  useEffect(() => {
+    if (booksStatus === false) {
+      dispatch(fetchBooks());
+    }
+  }, []);
 
   const removeBookBtn = (e) => {
-    dispatch(removeBook(e.target));
+    dispatch(removeBookSuccess(e.target));
   };
+
+  const myBooks = useSelector((state) => state.books.books);
 
   const AddBookCard = () => (
     <div>
