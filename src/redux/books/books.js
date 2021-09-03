@@ -61,7 +61,7 @@ export const addBook = (newBook) => (dispatch) => {
       id: item_id,
       title,
       category,
-      author: 'Jane Doe',
+      author: 'John Doe',
     }));
   });
 };
