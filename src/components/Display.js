@@ -33,7 +33,7 @@ const Books = () => {
               <div className="container">
                 <div className="row">
                   <div className="col">
-                    <p className="fs-6 text-secondary">{book.genre}</p>
+                    <p className="fs-6 text-secondary">{book.category}</p>
                     <p className="fs-5 fw-bold">{book.title}</p>
                     <p className="fs-5 text-primary">{book.author}</p>
                     <div className="container p-0">
