@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { removeBookSuccess, fetchBooks } from '../redux/books/books';
+import '../index.css';
 
 const Books = () => {
   const dispatch = useDispatch();
@@ -35,9 +38,9 @@ const Books = () => {
                   <div className="col">
                     <p className="fs-6 text-secondary">{book.category}</p>
                     <p className="fs-5 fw-bold">{book.title}</p>
-                    <p className="fs-5 text-primary">{book.author}</p>
+                    <p className="fs-5" id="typeface">{book.author}</p>
                     <div className="container p-0">
-                      <div className="row">
+                      <div className="row" id="typeface">
                         <div className="col">
                           Comments
                         </div>
@@ -51,11 +54,16 @@ const Books = () => {
                     </div>
                   </div>
                   <div className="col">
-                    {randomNum}
-                    % Completed
-                    <div className="progress">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="bar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={barstyle} />
+                    <div className="progress-circle">
+                      <div id="progress-circle">
+                        <CircularProgressbar value={randomNum} style={barstyle} />
+                      </div>
+                      <div>
+                        {randomNum}
+                        % Completed
+                      </div>
                     </div>
+
                   </div>
                   <div className="col">
                     <p>Current chapter</p>
@@ -82,14 +90,22 @@ const Books = () => {
           <div className="card-header">
             <div className="container">
               <div className="row">
-                <div className="col">
-                  Bookstore CMS
+                <div className="col-sm-4">
+                  <span className="Bookstore-CMS Text-Style-5">Bookstore CMS</span>
                 </div>
-                <div className="col">
-                  <Link className="links" to="/">BOOKS</Link>
+                <div className="col-sm-2">
+                  <Link className="links" to="/">
+                    <span className="BOOKS Text-Style-7">
+                      BOOKS
+                    </span>
+                  </Link>
                 </div>
-                <div className="col">
-                  <Link className="links" to="/categories">CATEGORIES</Link>
+                <div className="col-sm-2">
+                  <Link className="links" to="/categories">
+                    <span className="CATEGORIES Text-Style-7">
+                      CATEGORIES
+                    </span>
+                  </Link>
                 </div>
               </div>
             </div>

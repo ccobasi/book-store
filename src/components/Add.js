@@ -29,9 +29,9 @@ const AddBook = () => {
     <div className="container mx-auto mb-5">
       <div className="container mx-auto align-middle">
         <form onSubmit={submitBookToStore} className="mx-auto">
-          ADD NEW BOOK
+          <h2 className="title">ADD NEW BOOK</h2>
           <div className="row">
-            <div className="col-sm-4">
+            <div className="col-sm-6">
               <input
                 type="text"
                 name="title"
@@ -43,14 +43,14 @@ const AddBook = () => {
                 required
               />
             </div>
-            <div className="col-sm-2">
-              <select name="category" className="form-select" id="category" value={category} onChange={categoryChanged}>
+            <div className="col-sm-3">
+              <select name="category" className="form-control" id="category" value={category} onChange={categoryChanged}>
                 <option value="category 1">Drama</option>
-                <option value="category 1">Action</option>
-                <option value="category 1">Fiction</option>
+                <option value="category 2">Action</option>
+                <option value="category 3">Fiction</option>
               </select>
             </div>
-            <div className="col-sm-2">
+            <div className="col-sm-3">
               <button type="submit" className="btn btn-primary buttonAdd" onClick={submitBookToStore}>ADD BOOK</button>
             </div>
           </div>
