@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-// import { BsPersonFill } from 'react-icons/bs';
 import { removeBookSuccess, fetchBooks } from '../redux/books/books';
 import '../index.css';
 
@@ -85,13 +84,13 @@ const Books = () => {
   );
 
   return (
-    <div className="container justify-content-left align-middle pt-5">
+    <div className="container align-middle pt-5">
       <div className="container my-5 align-middle" id="formContainer">
         <div className="card">
           <div className="card-header bg-white">
             <div className="container">
               <div className="row">
-                <div className="col-sm-4">
+                <div className="col-sm-3">
                   <span className="Bookstore-CMS Text-Style-5">Bookstore CMS</span>
                 </div>
                 <div className="col-sm-2">
@@ -101,12 +100,17 @@ const Books = () => {
                     </span>
                   </Link>
                 </div>
-                <div className="col-sm-2">
+                <div className="col-sm-5">
                   <Link className="links" to="/categories">
-                    <span className="CATEGORIES Text-Style-7">
-                      CATEGORY
-                    </span>
+                    CATEGORY
                   </Link>
+                </div>
+                <div className="col-sm-2">
+                  <div className="logContainer">
+                    <Link to="/" className="logUser">
+                      <i className="fas fa-user rounded"> </i>
+                    </Link>
+                  </div>
                 </div>
 
               </div>
