@@ -182,6 +182,7 @@ body {
   line-height: normal;
   letter-spacing: normal;
   color: #0290ff;
+  background-color: #f5f6fa;
 }
 
 .BOOKS {
@@ -211,4 +212,30 @@ body {
   line-height: normal;
   letter-spacing: 1.9px;
   color: #121212;
+}
+
+.Oval {
+  width: 2.813rem;
+  height: 2.813rem;
+  margin: 0 0 0 41.5rem;
+  padding: 0.875rem;
+  border: solid 1px #e8e8e8;
+}
+
+.Mask {
+  width: 1.063rem;
+  height: 1.063rem;
+  background-color: #0290ff;
+}
+
+.icon {
+  color: #0290ff;
+}
+
+.panel-bg {
+  width: 87.5rem;
+  height: 5.938rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: #fff;
 }

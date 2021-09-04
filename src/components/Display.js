@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+// import { BsPersonFill } from 'react-icons/bs';
 import { removeBookSuccess, fetchBooks } from '../redux/books/books';
 import '../index.css';
 
@@ -84,10 +85,10 @@ const Books = () => {
   );
 
   return (
-    <div className="container align-middle pt-5">
+    <div className="container justify-content-left align-middle pt-5">
       <div className="container my-5 align-middle" id="formContainer">
         <div className="card">
-          <div className="card-header">
+          <div className="card-header bg-white">
             <div className="container">
               <div className="row">
                 <div className="col-sm-4">
@@ -103,10 +104,11 @@ const Books = () => {
                 <div className="col-sm-2">
                   <Link className="links" to="/categories">
                     <span className="CATEGORIES Text-Style-7">
-                      CATEGORIES
+                      CATEGORY
                     </span>
                   </Link>
                 </div>
+
               </div>
             </div>
           </div>
