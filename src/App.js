@@ -4,9 +4,12 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Books from './redux/books/books';
 import Categories from './redux/categories/categories';
 import './index.css';
+import store from './redux/configureStore';
+import AddBook from './components/Add';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,18 +19,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
-        <div className="App">
+      <Provider store={store}>
+        <Router>
           <Switch>
-            <Route exact path="/">
-              <Books />
-            </Route>
             <Route path="/categories">
               <Categories />
             </Route>
+            <Route path="/">
+              <Books />
+              <AddBook />
+            </Route>
           </Switch>
-        </div>
-      </Router>
+        </Router>
+      </Provider>
     );
   }
 }
