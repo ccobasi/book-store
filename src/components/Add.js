@@ -26,19 +26,38 @@ const AddBook = () => {
   };
 
   return (
-    <div>
-      <form>
-        <label htmlFor="title">
-          Title:
-          <input type="text" id="title" value={title} onChange={(e) => { titleChanged(e); }} />
-        </label>
-        <select name="category" value={category} onChange={categoryChanged}>
-          <option value="Drama">Drama</option>
-          <option value="Action">Action</option>
-        </select>
-      </form>
-      <button type="button" onClick={submitBookToStore}>Add Book</button>
+    <div className="container mx-auto mb-5">
+      <div className="container mx-auto align-middle">
+        <form onSubmit={submitBookToStore} className="mx-auto">
+          <h2 className="title">ADD NEW BOOK</h2>
+          <div className="row">
+            <div className="col-sm-6">
+              <input
+                type="text"
+                name="title"
+                id="title"
+                className="form-control"
+                value={title}
+                onChange={(e) => { titleChanged(e); }}
+                placeholder="Title"
+                required
+              />
+            </div>
+            <div className="col-sm-3">
+              <select name="category" className="form-control" id="category" value={category} onChange={categoryChanged}>
+                <option value="category 1">Drama</option>
+                <option value="category 2">Action</option>
+                <option value="category 3">Fiction</option>
+              </select>
+            </div>
+            <div className="col-sm-3">
+              <button type="submit" className="btn btn-primary buttonAdd" onClick={submitBookToStore}>ADD BOOK</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+
   );
 };
 

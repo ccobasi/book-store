@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
 
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/JRvgmQWxBSuTgawpguvn/books/';
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Cr80pbkuf1RrEQZCSqfj/books/';
 const REMOVE_BOOK_SUCCESS = 'REMOVE_BOOK_SUCCESS';
 const ADD_BOOK_SUCCESS = 'ADD_BOOK_SUCCESS';
 const GET_BOOK_REQUEST = 'GET_BOOK_REQUEST';
