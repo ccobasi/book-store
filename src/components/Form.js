@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from 'react';
 import { addBook } from '../redux/books/books';
 
-const AddBook = () => {
+const Form = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Drama');
+
   const dispatch = useDispatch();
+
   const titleChanged = (e) => setTitle(e.target.value);
   const categoryChanged = (e) => setCategory(e.target.value);
 
@@ -28,18 +30,16 @@ const AddBook = () => {
   return (
     <div>
       <form>
-        <label htmlFor="title">
-          Title:
-          <input type="text" id="title" value={title} onChange={(e) => { titleChanged(e); }} />
-        </label>
+        <h2>ADD NEW BOOK</h2>
+        <input type="text" name="title" value={title} onChange={titleChanged} placeholder="Title" required />
         <select name="category" value={category} onChange={categoryChanged}>
           <option value="Drama">Drama</option>
           <option value="Action">Action</option>
         </select>
+        <input type="submit" value="ADD BOOK" onClick={submitBookToStore} />
       </form>
-      <button type="button" onClick={submitBookToStore}>Add Book</button>
     </div>
   );
 };
 
-export default AddBook;
+export default Form;
